@@ -17,6 +17,7 @@ interface _GlobalComponents {
   'AuthForm': typeof import("../../components/AuthForm.vue")['default']
   'CardBoxComponent': typeof import("../../components/CardBoxComponent.vue")['default']
   'CourseCardComponent': typeof import("../../components/CourseCardComponent.vue")['default']
+  'CourseComponent': typeof import("../../components/CourseComponent.vue")['default']
   'SigninModal': typeof import("../../components/SigninModal.vue")['default']
   'UserProfileComponent': typeof import("../../components/UserProfileComponent.vue")['default']
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -45,6 +46,7 @@ interface _GlobalComponents {
   'LazyAuthForm': LazyComponent<typeof import("../../components/AuthForm.vue")['default']>
   'LazyCardBoxComponent': LazyComponent<typeof import("../../components/CardBoxComponent.vue")['default']>
   'LazyCourseCardComponent': LazyComponent<typeof import("../../components/CourseCardComponent.vue")['default']>
+  'LazyCourseComponent': LazyComponent<typeof import("../../components/CourseComponent.vue")['default']>
   'LazySigninModal': LazyComponent<typeof import("../../components/SigninModal.vue")['default']>
   'LazyUserProfileComponent': LazyComponent<typeof import("../../components/UserProfileComponent.vue")['default']>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>

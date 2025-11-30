@@ -1,10 +1,5 @@
 <template>
   <div class="card-wrapper">
-    <div v-if="errorMessage" class="notification error">{{ errorMessage }}</div>
-    <div v-if="successMessage" class="notification success">
-      {{ successMessage }}
-    </div>
-
     <div class="card">
       <div class="card-image-section">
         <NuxtLink :to="`/course/${course._id}`" class="image-link">

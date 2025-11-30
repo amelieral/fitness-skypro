@@ -17,6 +17,7 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 export const AuthForm: typeof import("../components/AuthForm.vue")['default']
 export const CardBoxComponent: typeof import("../components/CardBoxComponent.vue")['default']
 export const CourseCardComponent: typeof import("../components/CourseCardComponent.vue")['default']
+export const CourseComponent: typeof import("../components/CourseComponent.vue")['default']
 export const SigninModal: typeof import("../components/SigninModal.vue")['default']
 export const UserProfileComponent: typeof import("../components/UserProfileComponent.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -45,6 +46,7 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const LazyAuthForm: LazyComponent<typeof import("../components/AuthForm.vue")['default']>
 export const LazyCardBoxComponent: LazyComponent<typeof import("../components/CardBoxComponent.vue")['default']>
 export const LazyCourseCardComponent: LazyComponent<typeof import("../components/CourseCardComponent.vue")['default']>
+export const LazyCourseComponent: LazyComponent<typeof import("../components/CourseComponent.vue")['default']>
 export const LazySigninModal: LazyComponent<typeof import("../components/SigninModal.vue")['default']>
 export const LazyUserProfileComponent: LazyComponent<typeof import("../components/UserProfileComponent.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
