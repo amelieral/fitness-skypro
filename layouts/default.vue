@@ -94,7 +94,7 @@ const isAuthPage = computed(
 const currentUser = computed(() => userStore.userData);
 
 const userDisplayName = computed(() => {
-  const email = currentUser.value?.user?.email; 
+  const email = currentUser.value?.user?.email;
   if (!email) return "Пользователь";
   return email.split("@")[0].replace(/\./g, " ");
 });
@@ -152,7 +152,7 @@ const initUser = async () => {
 onMounted(async () => {
   window.addEventListener("scroll", handleScroll);
   await nextTick();
-  await initUser(); 
+  await initUser();
 });
 
 onUnmounted(() => {
@@ -253,6 +253,12 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.desktop-name {
+  font-size: 24px;
+  color: black;
+  font-weight: 400;
 }
 
 .dropdown-content p {

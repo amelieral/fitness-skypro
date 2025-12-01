@@ -79,12 +79,12 @@
         </button>
       </div>
     </div>
-    <WorkoutModal
+    <!-- <WorkoutModal
       v-if="showWorkoutModal"
       :course-id="course._id"
       :sorted-workouts="sortedWorkouts"
       @close="closeWorkoutModal"
-    />
+    /> -->
   </div>
 </template>
 
@@ -207,7 +207,6 @@ const showTrainingButton = computed(() => {
   return props.isProfilePage && props.course._id;
 });
 
-// Вычисляемое свойство для текста кнопки
 const trainingButtonText = computed(() => {
   if (progressData.value.percentage === 0) return "Начать тренировку";
   return progressData.value.percentage < 100
@@ -220,7 +219,6 @@ const extractWorkoutNumber = (name) => {
   return match ? parseInt(match[2], 10) : null;
 };
 
-// Функция сортировки тренировок
 const sortWorkouts = (workouts) => {
   return [...workouts].sort((a, b) => {
     const numA = extractWorkoutNumber(a.name);
@@ -233,7 +231,6 @@ const sortWorkouts = (workouts) => {
   });
 };
 
-// Обработчик клика по кнопке
 const handleStartTraining = async (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -244,7 +241,6 @@ const handleStartTraining = async (e) => {
     duration: props.course.durationInDays,
   });
   try {
-    // Получаем и сортируем тренировки
     const rawWorkouts = await coursesStore.fetchCourseWorkouts(
       props.course._id
     );
@@ -252,7 +248,6 @@ const handleStartTraining = async (e) => {
     showWorkoutModal.value = true;
   } catch (error) {
     console.error("Ошибка при получении тренировок:", error);
-    // Можно добавить уведомление об ошибке
   }
 };
 
@@ -262,7 +257,6 @@ const closeWorkoutModal = () => {
 
 const courseId = computed(() => props.course._id);
 
-// Ждем инициализации хранилища
 watch(
   () => workoutsStore.isInitialized,
   async (newValue) => {
@@ -279,30 +273,25 @@ async function handleInitialization() {
     try {
       isProgressLoading.value = true;
 
-      // Сначала проверяем наличие прогресса
       if (!workoutsStore.courseProgress[courseId.value]) {
         console.log("Начинаем загрузку прогресса");
         await workoutsStore.fetchCourseProgress(courseId.value);
       }
 
-      // Затем загружаем тренировки курса
       await coursesStore.fetchCourseWorkouts(courseId.value);
 
       await nextTick();
 
-      // Проверяем успешность загрузки
       if (!workoutsStore.courseProgress[courseId.value]) {
         console.warn("Данные прогресса не загрузились");
         isProgressLoading.value = false;
         return;
       }
 
-      // Обновляем прогресс
       await updateProgress();
       isProgressLoading.value = false;
       isDataLoaded.value = true;
 
-      // Дополнительная проверка через таймаут
       setTimeout(() => {
         if (!progressData.value.percentage) {
           console.warn("Прогресс не обновился автоматически");
@@ -316,17 +305,14 @@ async function handleInitialization() {
   }
 }
 
-// В секции onMounted оставляем только инициализацию хранилища
 onMounted(async () => {
   try {
-    // Инициализируем хранилище
     await workoutsStore.initialize();
   } catch (error) {
     console.error("Ошибка инициализации хранилища:", error);
   }
 });
 
-// Функция обновления прогресса
 const updateProgress = async () => {
   try {
     const storeData = workoutsStore.courseProgress[courseId.value];
@@ -339,19 +325,17 @@ const updateProgress = async () => {
       return;
     }
 
-    // Логируем каждую тренировку
     storeData.workoutsProgress.forEach((wp, index) => {
       console.log(`Тренировка ${index + 1}:`, wp);
       console.log("workoutCompleted:", wp.workoutCompleted);
       console.log("progressData:", wp.progressData);
     });
 
-    // Исправляем логику подсчета completed
     const validCompleted = storeData.workoutsProgress.filter((wp) => {
       return (
         wp.workoutCompleted ||
         (wp.progressData && wp.progressData.every((v) => v > 0))
-      ); // Проверяем, что все значения больше 0
+      ); 
     }).length;
 
     progressData.value = {

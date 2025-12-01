@@ -88,7 +88,6 @@ const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 
-// Реактивная валидация
 const emailError = computed(() => !/^\S+@\S+\.\S+$/.test(email.value));
 const passwordError = computed(() => password.value.length < 6);
 const confirmPasswordError = computed(
@@ -117,7 +116,6 @@ const handleSubmit = async () => {
       await userStore.login(email.value, password.value);
     }
 
-    // Проверяем успешность авторизации
     if (userStore.token && !userStore.error) {
       console.log("Auth successful, closing modal");
       if (props.isModal) {
@@ -228,7 +226,7 @@ form {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 280px;
 
   @media (max-width: 480px) {
     justify-content: flex-start;
@@ -238,15 +236,17 @@ form {
 .form-input {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: #d0cece;
   gap: 10px;
 }
 
 input {
-  width: 100%;
+  width: 280px;
   height: 52px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #d0cece;
+  border-radius: 8px;
 
   @media (max-width: 480px) {
     height: 48px;
@@ -258,7 +258,7 @@ input {
   flex-direction: column;
   gap: 10px;
   margin-top: 34px;
-  width: 100%;
+  width: 280px;
 
   @media (max-width: 480px) {
     margin-top: 24px;

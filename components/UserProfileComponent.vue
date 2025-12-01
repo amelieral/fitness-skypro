@@ -26,11 +26,10 @@
      
     </div>
 
-    <!-- Добавляем условие отображения курсов только при авторизации -->
     <div v-if="userStore.isAuthenticated">
       <h1>Мои курсы</h1>
       <div class="courses-grid">
-        <CardCaseComponent
+        <CardBoxComponent
           v-if="!isLoading"
           :courses="userCourses || []"
           :is-loading="coursesStore.isLoading"
@@ -51,7 +50,6 @@ const userStore = useUserStore();
 const coursesStore = useCoursesStore();
 const isLoading = computed(() => userStore.isLoading);
 
-// Получаем данные пользователя
 const user = computed(() => {
   if (userStore.currentUser && userStore.currentUser.user) {
     return userStore.currentUser.user;
@@ -102,12 +100,12 @@ const handleLogout = () => {
 };
 </script>
 
+
 <style scoped>
 .profile-container {
   display: block;
   width: 100%;
-  
-  
+
   box-sizing: border-box;
 }
 
@@ -140,10 +138,10 @@ h1 {
 }
 
 .details {
- flex: 1;
- display: flex;
- flex-direction: column;
- justify-content: space-between;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .details p:first-child {
@@ -158,21 +156,20 @@ h1 {
 }
 
 .logout-btn {
-    width: 100%;
-    max-width: 200px;
-    padding: 12px;
-    border-radius: 16px;
-    border: 1px solid #000;
-    color: #000;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    background-color: white;
+  width: 100%;
+  max-width: 200px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  background-color: white;
 
-    &:hover {
-      background-color: #f5f5f5;
-      border-color: #666;
-    }
-  
+  &:hover {
+    background-color: #f5f5f5;
+    border-color: #666;
+  }
 }
 
 @media (max-width: 768px) {

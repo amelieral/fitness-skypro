@@ -37,9 +37,9 @@
       </div>
     </div>
 
-    <div class="mobile-image-containe">
+    <!-- <div class="mobile-image-containe">
       <img src="../assets/img/course/Group-mobile.png" class="mobile-image" />
-    </div>
+    </div> -->
 
     <div class="benefits-section">
       <div class="content-wrapper">
@@ -224,8 +224,8 @@ const handleAuthRedirect = () => {
 
 .section-title {
   color: #374151;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 40px;
+  margin-bottom: 40px;
   position: relative;
 
   &::before {
@@ -333,13 +333,14 @@ const handleAuthRedirect = () => {
 .section-title-benefit {
   margin-top: 40px;
   font-size: 60px;
-  margin-bottom: 28px;
+  margin-bottom: 40px;
 }
 
 .content-wrapper {
+  box-shadow: 0px 4px 67px -12px #00000021;
   margin-left: 2rem;
   margin-bottom: 1.5rem;
-  padding: 1rem;
+  padding-top: 102px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -348,7 +349,7 @@ const handleAuthRedirect = () => {
 .benefits-section {
   position: relative;
   padding: 1.5rem;
-  background: #f0f4ff;
+  background: transparent;
   border-radius: 8px;
   margin: 1.5rem 0;
   overflow: visible;
@@ -370,9 +371,8 @@ const handleAuthRedirect = () => {
 .background-image {
   position: absolute;
   left: 0;
-  width: 100%;
-  height: 110%;
-  z-index: 1;
+  width: 670px;
+  height: 390px
 }
 
 .foreground-image {
