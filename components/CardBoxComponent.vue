@@ -47,7 +47,7 @@ defineProps({
   flex-wrap: wrap;
   gap: 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     gap: 24px; 
     justify-content: center;
   }

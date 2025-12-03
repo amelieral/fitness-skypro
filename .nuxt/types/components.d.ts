@@ -18,8 +18,12 @@ interface _GlobalComponents {
   'CardBoxComponent': typeof import("../../components/CardBoxComponent.vue")['default']
   'CourseCardComponent': typeof import("../../components/CourseCardComponent.vue")['default']
   'CourseComponent': typeof import("../../components/CourseComponent.vue")['default']
+  'ProgressModal': typeof import("../../components/ProgressModal.vue")['default']
   'SigninModal': typeof import("../../components/SigninModal.vue")['default']
+  'SuccessModalTest': typeof import("../../components/SuccessModal.test")['default']
+  'SuccessModal': typeof import("../../components/SuccessModal.vue")['default']
   'UserProfileComponent': typeof import("../../components/UserProfileComponent.vue")['default']
+  'WorkoutModal': typeof import("../../components/WorkoutModal.vue")['default']
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -47,8 +51,12 @@ interface _GlobalComponents {
   'LazyCardBoxComponent': LazyComponent<typeof import("../../components/CardBoxComponent.vue")['default']>
   'LazyCourseCardComponent': LazyComponent<typeof import("../../components/CourseCardComponent.vue")['default']>
   'LazyCourseComponent': LazyComponent<typeof import("../../components/CourseComponent.vue")['default']>
+  'LazyProgressModal': LazyComponent<typeof import("../../components/ProgressModal.vue")['default']>
   'LazySigninModal': LazyComponent<typeof import("../../components/SigninModal.vue")['default']>
+  'LazySuccessModalTest': LazyComponent<typeof import("../../components/SuccessModal.test")['default']>
+  'LazySuccessModal': LazyComponent<typeof import("../../components/SuccessModal.vue")['default']>
   'LazyUserProfileComponent': LazyComponent<typeof import("../../components/UserProfileComponent.vue")['default']>
+  'LazyWorkoutModal': LazyComponent<typeof import("../../components/WorkoutModal.vue")['default']>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

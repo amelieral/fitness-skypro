@@ -179,8 +179,6 @@ watch([email, password, confirmPassword], () => {
 <style scoped>
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -195,19 +193,11 @@ watch([email, password, confirmPassword], () => {
   padding: 40px;
   border-radius: 16px;
   width: 100%;
-  max-width: 360px;
-  min-height: 425px;
+  max-width: 360px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
-  @media (max-width: 480px) {
-    width: 90%;
-    margin: 20px;
-    padding: 30px;
-    height: auto;
-  }
 }
 
 .logo {
@@ -223,14 +213,9 @@ watch([email, password, confirmPassword], () => {
 }
 
 form {
-  flex: 1;
   display: flex;
   flex-direction: column;
   width: 280px;
-
-  @media (max-width: 480px) {
-    justify-content: flex-start;
-  }
 }
 
 .form-input {

@@ -28,7 +28,7 @@
 
       <div class="card-content">
         <NuxtLink :to="`/course/${course._id}`" class="title-link">
-          <h3 class="card-title">{{ course.nameRU }}</h3>
+          <h2 class="card-title">{{ course.nameRU }}</h2>
         </NuxtLink>
 
         <div class="meta-container">
@@ -79,12 +79,12 @@
         </button>
       </div>
     </div>
-    <!-- <WorkoutModal
+    <WorkoutModal
       v-if="showWorkoutModal"
       :course-id="course._id"
       :sorted-workouts="sortedWorkouts"
       @close="closeWorkoutModal"
-    /> -->
+    />
   </div>
 </template>
 
@@ -429,16 +429,14 @@ const updateProgress = async () => {
 }
 
 .card-title {
-  font-size: 32px;
   margin: 0 0 12px 0;
   color: #1a2938;
-  line-height: 1.3;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   padding-bottom: 20px;
+  font-weight: 400;
 }
 
 .title-link {
@@ -508,6 +506,7 @@ const updateProgress = async () => {
   font-size: 16px;
   transition: all 0.3s ease;
   background-color: #bcec30;
+  border: none;
   margin-top: auto;
 
   &:hover {

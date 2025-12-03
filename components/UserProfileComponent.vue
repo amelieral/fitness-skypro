@@ -105,7 +105,6 @@ const handleLogout = () => {
 .profile-container {
   display: block;
   width: 100%;
-
   box-sizing: border-box;
 }
 
@@ -125,6 +124,8 @@ h1 {
   height: 257px;
   padding: 30px;
   align-items: stretch;
+  background-color: white;
+    box-shadow: 0px 4px 67px -12px #00000021;
 }
 
 .avatar {
@@ -172,40 +173,4 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .profile-info {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    height: 365px;
-  }
-
-  .avatar {
-    width: 141px;
-    height: 141px;
-    margin: 0 auto;
-  }
-
-  .details p:first-child {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .details p:nth-child(2) {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .logout-btn {
-    max-width: 283px;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 16px;
-  }
-}
 </style>

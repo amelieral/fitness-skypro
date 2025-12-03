@@ -76,7 +76,6 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
-import ModalLogin from "~/components/SigninModal.vue";
 import { useUserStore } from "@/stores/user";
 import { useRoute, useRouter } from "vue-router";
 
@@ -162,13 +161,14 @@ onUnmounted(() => {
 
 <style scoped>
 .layout {
+  background-color: #FAFAFA;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  background: #fff;
+  background: #FAFAFA;
   padding: 15px 20px;
   position: static;
   z-index: 1000;
@@ -406,6 +406,10 @@ main {
   .custom-btn {
     padding: 8px 16px;
     font-size: 14px;
+  }
+
+  .main_title {
+    font-weight: 500;
   }
 }
 </style>

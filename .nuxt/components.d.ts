@@ -18,8 +18,12 @@ export const AuthForm: typeof import("../components/AuthForm.vue")['default']
 export const CardBoxComponent: typeof import("../components/CardBoxComponent.vue")['default']
 export const CourseCardComponent: typeof import("../components/CourseCardComponent.vue")['default']
 export const CourseComponent: typeof import("../components/CourseComponent.vue")['default']
+export const ProgressModal: typeof import("../components/ProgressModal.vue")['default']
 export const SigninModal: typeof import("../components/SigninModal.vue")['default']
+export const SuccessModalTest: typeof import("../components/SuccessModal.test")['default']
+export const SuccessModal: typeof import("../components/SuccessModal.vue")['default']
 export const UserProfileComponent: typeof import("../components/UserProfileComponent.vue")['default']
+export const WorkoutModal: typeof import("../components/WorkoutModal.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -47,8 +51,12 @@ export const LazyAuthForm: LazyComponent<typeof import("../components/AuthForm.v
 export const LazyCardBoxComponent: LazyComponent<typeof import("../components/CardBoxComponent.vue")['default']>
 export const LazyCourseCardComponent: LazyComponent<typeof import("../components/CourseCardComponent.vue")['default']>
 export const LazyCourseComponent: LazyComponent<typeof import("../components/CourseComponent.vue")['default']>
+export const LazyProgressModal: LazyComponent<typeof import("../components/ProgressModal.vue")['default']>
 export const LazySigninModal: LazyComponent<typeof import("../components/SigninModal.vue")['default']>
+export const LazySuccessModalTest: LazyComponent<typeof import("../components/SuccessModal.test")['default']>
+export const LazySuccessModal: LazyComponent<typeof import("../components/SuccessModal.vue")['default']>
 export const LazyUserProfileComponent: LazyComponent<typeof import("../components/UserProfileComponent.vue")['default']>
+export const LazyWorkoutModal: LazyComponent<typeof import("../components/WorkoutModal.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

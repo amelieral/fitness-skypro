@@ -37,10 +37,6 @@
       </div>
     </div>
 
-    <!-- <div class="mobile-image-containe">
-      <img src="../assets/img/course/Group-mobile.png" class="mobile-image" />
-    </div> -->
-
     <div class="benefits-section">
       <div class="content-wrapper">
         <h3 class="section-title-benefit">
@@ -184,10 +180,8 @@ const handleAuthRedirect = () => {
 
 <style scoped>
 .course-card {
-  background: #ffffff;
   border-radius: 12px;
   padding: 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
 
@@ -214,12 +208,6 @@ const handleAuthRedirect = () => {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.target-section,
-.directions-section,
-.benefits-section {
-  padding-top: 2rem;
 }
 
 .section-title {
@@ -259,7 +247,7 @@ const handleAuthRedirect = () => {
   border-radius: 28px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
   height: 141px;
   box-sizing: border-box;
   flex: 0 0 auto;
@@ -292,14 +280,14 @@ const handleAuthRedirect = () => {
 
 .directions-wrapper {
   background: #bcec30;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem;
 }
 
 .directions-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 124px;
   padding: 0;
   list-style: none;
   width: 100%;
@@ -308,17 +296,16 @@ const handleAuthRedirect = () => {
 .direction-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 15px;
+  gap: 10px; 
   font-size: 24px;
-  border-radius: 8px;
-  flex: 1 1 calc(33.33% - 2rem);
 }
 
 .benefits-list {
   list-style: none;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding-left: 40px;
+  margin-bottom: 28px;
+  color:  #999;
+  font-size: 24px;
 }
 
 .target-list li,
@@ -327,36 +314,22 @@ const handleAuthRedirect = () => {
   padding: 0.5rem 0;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
 }
 
 .section-title-benefit {
+  padding-left: 40px;
   margin-top: 40px;
   font-size: 60px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .content-wrapper {
   box-shadow: 0px 4px 67px -12px #00000021;
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
-  padding-top: 102px;
+  margin-top: 102px;
   background-color: #ffffff;
   display: flex;
+  border-radius: 16px;
   flex-direction: column;
-}
-
-.benefits-section {
-  position: relative;
-  padding: 1.5rem;
-  background: transparent;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  overflow: visible;
-  margin-top: 0;
-  position: relative;
-  padding-top: 0;
-  z-index: 2;
 }
 
 .image-overlay {
@@ -370,17 +343,15 @@ const handleAuthRedirect = () => {
 
 .background-image {
   position: absolute;
-  left: 0;
-  width: 670px;
-  height: 390px
+  bottom:-0.1%;
+  right:+4%;
+
 }
 
 .foreground-image {
   position: absolute;
-  top: -15%;
-  right: 5%;
-  width: 40%;
-  object-fit: contain;
+  bottom: +3%;
+  right: 5%; 
   z-index: 3;
 }
 
@@ -395,110 +366,13 @@ const handleAuthRedirect = () => {
   color: #000000;
   border: none;
   border-radius: 26px;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  transition: background 0.3s ease;
-  z-index: 9999;
+  font-size: 18px; 
+  margin-bottom: 40px;
+  margin-left: 25px;
 }
 
 .auth-button:hover {
   background: #a8d52b;
 }
 
-@media (max-width: 768px) {
-  .course-card {
-    padding: 1.5rem;
-  }
-
-  .course-title {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.1rem;
-  }
-
-  .target-list {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .target-item {
-    flex: 1 1 100% !important;
-    width: 100% !important;
-    min-width: unset;
-    height: 343px;
-    padding: 1rem;
-    border-radius: 6px;
-  }
-
-  .directions-list {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .image-overlay {
-    position: relative;
-  }
-
-  .background-image,
-  .foreground-image {
-    display: none;
-  }
-
-  .mobile-image-container {
-    position: relative;
-    z-index: 1;
-    height: 180px;
-    margin: -40px 0 -60px;
-  }
-
-  .mobile-image {
-    position: absolute;
-    display: block;
-    width: 100%;
-    left: 0;
-    top: 1050px;
-  }
-
-  .directions-section {
-    position: relative;
-  }
-
-  .benefits-section {
-    position: relative;
-  }
-
-  .content-wrapper {
-    position: static;
-    width: 100%;
-    min-width: 0;
-    max-width: none;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    transform: none;
-    background: transparent;
-    box-shadow: none;
-    display: block;
-    box-sizing: border-box;
-    padding: 15px;
-
-    .section-title-benefit,
-    .benefits-list {
-      max-width: 100%;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-  h3 {
-    font-size: 32px;
-  }
-  .auth-button {
-    width: 100%;
-  }
-}
 </style>
