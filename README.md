@@ -1,6 +1,8 @@
-# Nuxt Minimal Starter
+# fitness-skypro
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
++ неавторизованный пользователь может просматривать главную страницу с карточками курсов и страницу отдельного курса 
++ авторизованный пользователь может добавлять и удалять треки
++ пользователь может перейти на страницу тренировки и отслеживать свой прогресс 
 
 ## Setup
 
