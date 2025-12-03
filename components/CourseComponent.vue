@@ -285,9 +285,9 @@ const handleAuthRedirect = () => {
 }
 
 .directions-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 124px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; 
   padding: 0;
   list-style: none;
   width: 100%;
