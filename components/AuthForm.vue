@@ -108,24 +108,23 @@ const handleSubmit = async () => {
 
   try {
     if (props.isLogin) {
-      // обычный логин
       await userStore.login(email.value, password.value);
     } else {
-      // регистрация + автоматический логин
       await userStore.register(email.value, password.value);
+
+      // если регистрация вернула ошибку — логин НЕ выполняем
+      if (userStore.error) return;
+
       await userStore.login(email.value, password.value);
     }
 
     if (userStore.token && !userStore.error) {
-      console.log("Auth successful, closing modal");
       if (props.isModal) {
         emit("close");
       } else {
         await router.push("/");
       }
       resetForm();
-    } else {
-      console.log("Auth failed:", userStore.error);
     }
   } catch (error) {
     console.error("Auth error:", error);
@@ -193,7 +192,7 @@ watch([email, password, confirmPassword], () => {
   padding: 40px;
   border-radius: 16px;
   width: 100%;
-  max-width: 360px; 
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
