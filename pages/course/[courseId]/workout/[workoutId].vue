@@ -230,6 +230,7 @@ watch(
 <style scoped>
 .workout-container {
   max-width: 1200px;
+  /* width: 100%; */
   margin: 0 auto;
   padding: 20px;
 }
@@ -267,7 +268,7 @@ watch(
 
 .workout-title {
   color: black;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .video-wrapper {
@@ -353,12 +354,6 @@ watch(
   transition: all 0.3s ease;
   background-color: #bcec30;
   border: none;
-
-  &:hover {
-    background-color: #000000;
-    color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
 }
 
 .retry-btn {
@@ -432,11 +427,6 @@ watch(
     margin: 0 10px;
   }
 
-  .exercise-title {
-    font-size: 1rem;
-    text-align: left !important;
-  }
-
   .progress-btn {
     max-width: 100% !important;
     width: 100%;
@@ -463,11 +453,8 @@ watch(
 
 @media (max-width: 480px) {
   .course-title {
-    font-size: 24px !important;
-  }
-
-  .workout-title {
-    font-size: 32px; /* Сохраняем размер */
+    font-size: 24px;
+    font-weight: 500;
   }
 
   .video-player {
@@ -475,7 +462,8 @@ watch(
   }
 
   .exercise-title {
-    font-size: 16px; /* Сохраняем размер */
+    font-size: 18px; 
+    font-weight: 400;
   }
 
   .progress-bar {

@@ -18,10 +18,10 @@
           @click="handleAdd"
         >
           <img
-            src="../assets/img/icon/Add-in-Circle.svg"
+            :src="addIcon"
             class="add-icon"
-            alt="Добавить"
-            title="Добавить курс"
+            :alt="isLocalAdded || isAdded ? 'Удалить' : 'Добавить'"
+            :title="isLocalAdded || isAdded ? 'Удалить курс' : 'Добавить курс'"
           />
         </button>
       </div>
@@ -77,6 +77,13 @@
         >
           {{ trainingButtonText }}
         </button>
+      </div>
+      <div
+        v-if="notification.visible"
+        class="card-notification"
+        :class="notification.type"
+      >
+        {{ notification.message }}
       </div>
     </div>
     <WorkoutModal
@@ -135,15 +142,39 @@ const isAdded = computed(() => {
   return userCourses.value.includes(props.course._id);
 });
 
+const addIcon = computed(() => {
+  return isLocalAdded.value || isAdded.value
+    ? new URL("../assets/img/icon/Minus.svg", import.meta.url).href
+    : new URL("../assets/img/icon/Add-in-Circle.svg", import.meta.url).href;
+});
+
+const notification = ref({
+  visible: false,
+  message: "",
+  type: "", // "add" | "remove"
+});
+
+const showNotification = (message, type = "add") => {
+  notification.value = { visible: true, message, type };
+
+  setTimeout(() => {
+    notification.value.visible = false;
+  }, 2000);
+};
+
 const handleAdd = async (e) => {
   e.stopPropagation();
   try {
     if (isLocalAdded.value || isAdded.value) {
       isLocalAdded.value = false;
       await coursesStore.removeCourse(props.course._id);
+
+      showNotification("Курс удалён", "remove");
     } else {
       isLocalAdded.value = true;
       await coursesStore.addCourse(props.course._id);
+
+      showNotification("Курс добавлен", "add");
     }
 
     const isCourseAdded = coursesStore.getUserCourses.includes(
@@ -154,6 +185,7 @@ const handleAdd = async (e) => {
     }
   } catch (error) {
     isLocalAdded.value = !isLocalAdded.value;
+    showNotification("Авторизуйтесь", "remove");
     console.error("Ошибка при изменении статуса курса:", error);
   }
 };
@@ -335,7 +367,7 @@ const updateProgress = async () => {
       return (
         wp.workoutCompleted ||
         (wp.progressData && wp.progressData.every((v) => v > 0))
-      ); 
+      );
     }).length;
 
     progressData.value = {
@@ -486,6 +518,52 @@ const updateProgress = async () => {
   height: 16px;
   flex-shrink: 0;
   object-fit: contain;
+}
+
+.card-notification {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #000;
+  opacity: 0;
+  animation: fadeInOut 2s ease forwards;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ✔ Цвет добавления — твой фирменный */
+.card-notification.add {
+  background: #bcec30;
+}
+
+/* ✔ Цвет удаления — мягкий серый */
+.card-notification.remove {
+  background: rgba(149, 165, 166, 0.9);
+  color: #fff;
+}
+
+/* Мягкая анимация */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
 }
 
 @media (max-width: 400px) {

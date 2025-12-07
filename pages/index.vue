@@ -2,9 +2,9 @@
   <div class="content-container">
     <div class="wrapper">
       <div class="text-container">
-        <h2 class="main-title">
+        <div class="main-title">
           Начните заниматься спортом <br />и улучшите качество жизни
-        </h2>
+        </div>
       </div>
 
       <div class="image-container">

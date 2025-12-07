@@ -37,6 +37,10 @@
       </div>
     </div>
 
+    <div class="mobile-image-containe">
+      <img src="../assets/img/course/mobile.png" class="mobile-image" />
+    </div>
+
     <div class="benefits-section">
       <div class="content-wrapper">
         <h3 class="section-title-benefit">
@@ -286,8 +290,8 @@ const handleAuthRedirect = () => {
 
 .directions-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 10px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   padding: 0;
   list-style: none;
   width: 100%;
@@ -296,7 +300,7 @@ const handleAuthRedirect = () => {
 .direction-item {
   display: flex;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
   font-size: 24px;
 }
 
@@ -304,7 +308,7 @@ const handleAuthRedirect = () => {
   list-style: none;
   padding-left: 40px;
   margin-bottom: 28px;
-  color:  #999;
+  color: #999;
   font-size: 24px;
 }
 
@@ -343,15 +347,14 @@ const handleAuthRedirect = () => {
 
 .background-image {
   position: absolute;
-  bottom:-0.1%;
-  right:+4%;
-
+  bottom: -0.1%;
+  right: +4%;
 }
 
 .foreground-image {
   position: absolute;
   bottom: +3%;
-  right: 5%; 
+  right: 5%;
   z-index: 3;
 }
 
@@ -366,7 +369,7 @@ const handleAuthRedirect = () => {
   color: #000000;
   border: none;
   border-radius: 26px;
-  font-size: 18px; 
+  font-size: 18px;
   margin-bottom: 40px;
   margin-left: 25px;
 }
@@ -375,4 +378,102 @@ const handleAuthRedirect = () => {
   background: #a8d52b;
 }
 
+@media (max-width: 480px) {
+  .course-card {
+    padding: 1.5rem;
+  }
+
+  .course-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .target-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .target-item .fit-text {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .target-item {
+    border-radius: 28px;
+    width: 100%;
+    height: 141px;
+  }
+
+  .directions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 20px;
+  }
+
+  .image-overlay {
+    position: relative;
+  }
+
+  .background-image,
+  .foreground-image {
+    display: none; /* Скрываем десктопные изображения */
+  }
+
+  .mobile-image-container {
+    position: relative;
+  }
+
+  .mobile-image {
+    position: absolute;
+    display: block;
+    bottom: 220px
+  }
+
+  .directions-section {
+    position: relative;
+  }
+
+  .benefits-section {
+    position: relative;
+  }
+
+  .section-title-benefit {
+    font-size: 32px;
+    font-weight: 500;
+    padding-top: 30px;
+  }
+
+  .benefits-list {
+    font-size: 18px;
+  }
+
+  .content-wrapper {
+    margin-top: 156px;
+    position: static;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+
+    /* Отмена трансформаций */
+    transform: none;
+
+    /* Восстановление блочной модели */
+    display: block;
+    box-sizing: border-box;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  .auth-button {
+    width: 283px;
+    margin-left: 50px;
+  }
+}
 </style>

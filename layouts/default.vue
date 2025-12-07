@@ -14,11 +14,6 @@
               src="~/assets/img/icon/Profile-desktop.svg"
             />
             <span class="desktop-name">{{ userDisplayName }}</span>
-            <!-- <img
-              src="~/assets/img/icon/Profile-desktop.svg"
-              class="mobile-icon"
-              alt="Профиль"
-            /> -->
             <svg class="dropdown-icon" viewBox="0 0 10 6" fill="currentColor">
               <path d="M0 0l5 5 5-5" />
             </svg>
@@ -194,13 +189,13 @@ onUnmounted(() => {
 .logo {
   display: block;
   max-height: 40px;
-  padding-bottom: 15px;
 }
 
 .logo-text {
   font-size: 18px;
   color: #999;
   font-weight: 400;
+  padding-top: 15px;
 }
 
 .user-section {
@@ -214,7 +209,6 @@ onUnmounted(() => {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px 12px;
   border-radius: 6px;
   transition: background-color 0.3s;
 }
@@ -318,12 +312,6 @@ main {
   flex: 1;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-
 .content-wrapper {
   max-width: 1160px;
   margin: 0 auto;
@@ -358,11 +346,10 @@ main {
   transform: translateX(-50%) translateY(-2px);
 }
 
-@media (max-width: 1160px) {
-  .header-content,
-  .content-wrapper {
-    padding: 0 20px;
-  }
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 @media (max-width: 768px) {

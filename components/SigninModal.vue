@@ -48,14 +48,4 @@ const toggleMode = () => {
   align-items: center;
   z-index: 9999;
 }
-
-.modal-content {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 360px;
-  min-height: 425px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
 </style>

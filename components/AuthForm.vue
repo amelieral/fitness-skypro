@@ -178,8 +178,6 @@ watch([email, password, confirmPassword], () => {
 <style scoped>
 .modal-overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -189,7 +187,8 @@ watch([email, password, confirmPassword], () => {
 
 .modal-content {
   background-color: #fff;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   border-radius: 16px;
   width: 100%;
   max-width: 360px;
